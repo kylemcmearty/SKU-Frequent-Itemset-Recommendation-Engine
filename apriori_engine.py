@@ -5,7 +5,7 @@ Generates "recommendations" for a list of unique identifiers (SKUs) based on fre
 This program uses the mlxtend package and the Apriori algorithm to mine assocation patterns between
 frequently purchased items and creates rules for SKU recommendations based on the defined parameters.
 
-References: @rasbt - https://github.com/rasbt/mlxtend/blob/master/mlxtend/frequent_patterns/apriori.py
+Apriori Source: @rasbt - https://github.com/rasbt/mlxtend/blob/master/mlxtend/frequent_patterns/apriori.py
 """
 
 
