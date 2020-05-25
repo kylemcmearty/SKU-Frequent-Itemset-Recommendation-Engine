@@ -21,7 +21,7 @@ from mlxtend.frequent_patterns import association_rules
 
 def sku_lists():
     """
-    Returns a dataset of tranactions as a list of lists to pass into the frequent itemsets function
+    Returns a dataset of transactions as a list of lists to pass into the frequent itemsets function
 
     """
  
@@ -31,7 +31,7 @@ def sku_lists():
     # Rename columns that match df column names
     df['trnsact_id'] = df['id']
     
-    # Groupby Transaction_ID and count the number of items sold by transaction group
+    # Groupby Transaction_ID and count the number of SKUs sold by transaction group
     df['frequency'] = df.groupby('trnsact_id')['trnsact_id'].transform('count')
     result = df[['trnsact_id', 'frequency', 'sku']]
     result['sku'] = result['sku'].astype(str)
