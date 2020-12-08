@@ -94,10 +94,11 @@ def sku_rcmds(dataset, sku_input, min_thrsh=0.01):
     results = results[reord_colm].reset_index()
     
     # Format print recommendations
-    print(f'')
-    print(f"\n    List of SKUs: {sku_input}\n")
-    print(f'\n    *** {results.shape[0]} total recommendations made for List of SKUs ***\n')
-    print(f'\n{results}\n')
+    print(
+        f"\n\n    List of SKUs: {sku_input}\n")
+        f'\n    *** {results.shape[0]} total recommendations made for List of SKUs ***\n')
+        f'\n{results}\n'
+        )
 
     return results
 
