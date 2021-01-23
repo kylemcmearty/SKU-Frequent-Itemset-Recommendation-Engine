@@ -5,7 +5,6 @@ and the Apriori algorithm to mine assocation patterns between frequently \
 purchased items and creates rules for itemcode recommendations \
 based on the defined parameters.
 
-@Author: Kyle McMearty
 @AprioriAuthor: @rasbt
 https://github.com/rasbt/mlxtend/blob/master/mlxtend/frequent_patterns/apriori.py
 @mlxtend.version: 0.18.0
@@ -52,7 +51,7 @@ class MarketBasketAnalysis:
 
     def prepare_dataset(self) -> list[str]:
         """
-        Create a list of lists contatining unqiue itemcodes in every tranxtion.
+        Create a list of lists contatining unique itemcodes in every tranxtion.
 
         :return: a list of lists containing all the unique itemcode
         :rtype: List
