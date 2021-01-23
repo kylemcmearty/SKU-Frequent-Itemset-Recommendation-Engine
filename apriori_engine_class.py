@@ -48,7 +48,7 @@ class MarketBasketAnalysis:
         if ("transaction_id" not in obj.columns
            or "item_code" not in obj.columns):
             raise AttributeError("Dataset must contain columns"
-                                 "'transaction_d' and 'item_code'.")
+                                 "'transaction_id' and 'item_code'.")
 
     def prepare_dataset(self) -> list[str]:
         """
