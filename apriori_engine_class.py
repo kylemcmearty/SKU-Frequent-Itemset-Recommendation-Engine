@@ -69,12 +69,12 @@ class MarketBasketAnalysis:
         id_list = group_result.groupby('transaction_id', sort=False
                                        ).item_code \
                                         .unique() \
-                                        .agg(', '.join) \
+                                        .agg(','.join) \
                                         .reset_index()
 
         item_code_list = id_list["item_code"].tolist()
 
-        return [str.split(x, sep=', ') for x in item_code_list]
+        return [str.split(x, sep=',') for x in item_code_list]
 
     def calculate_itemset_frequency(self,
                                     transaction_list: list[str],
@@ -138,7 +138,6 @@ class MarketBasketAnalysis:
         Assc_rules = Assc_rules.sort_values(by='confidence', ascending=False)
         end_time = dt.now() - start_time
 
-        # List of itemcodes
         results = Assc_rules[Assc_rules.antecedents.map(
                                 lambda A: A.issubset(itemcode_input))]
 
@@ -151,7 +150,6 @@ class MarketBasketAnalysis:
                                'consequent support', 'confidence']
             results = results[reorder_columns].reset_index()
 
-            # Format print recommendations
             print(
                 f"\n\n    List of itemcodes: {itemcode_input}\n"
                 f"\n\t*** {results.shape[0]} assc rules matching "
